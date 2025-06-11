@@ -8,6 +8,7 @@ import TwiterIcon from "@/assets/landing_page/twitter.png"
 import LinkedInIcon from "@/assets/landing_page/linkedin.png"
 
 const FooterPage = () => {
+    const date =new Date();
   return (
    <Box bgcolor="rgb(17,26,34)">
     <Container>
@@ -27,7 +28,7 @@ const FooterPage = () => {
         <div className='border-b-[1px] border-dashed border-amber-50'></div>
          <Stack direction="row" justifyContent="space-between" alignItems="center" gap={2} py={3}>
             <Typography color='#fff' component='p'>
-                &copy; 2025 UK Healthcare. All rights reserved.
+                &copy; {date.getFullYear()} UK Healthcare. All rights reserved.
             </Typography>
             <Typography color='#fff' variant="h5" component={Link} href="/" fontWeight={600}>U<Box component="span" color="primary.main">K</Box> Health Care</Typography>
 
