@@ -1,2 +1,6 @@
 @import "tailwindcss";
 
+@view-transition {
+    navigation: auto;
+  }
+
