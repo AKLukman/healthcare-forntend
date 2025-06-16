@@ -1,10 +1,11 @@
+import DashboardDrawer from '@/components/Dashbaord/DashboardDrawer/DashboardDrawer'
+import React from 'react'
 
 const DashboardLayout = ( { children }: { children: React.ReactNode } ) => {
     return (
-        <div>
-            <h1>dashbaord</h1>
+        <DashboardDrawer>
             {children}
-        </div>
+        </DashboardDrawer>
     )
 }
 

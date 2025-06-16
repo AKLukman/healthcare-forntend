@@ -8,10 +8,10 @@ import TwiterIcon from "@/assets/landing_page/twitter.png"
 import LinkedInIcon from "@/assets/landing_page/linkedin.png"
 
 const FooterPage = () => {
-    const date =new Date();
+  const date = new Date();
   return (
-   <Box bgcolor="rgb(17,26,34)">
-    <Container>
+    <Box bgcolor="rgb(17,26,34)">
+      <Container>
         <Stack direction="row" justifyContent="center" gap={4} py={5}>
           <Typography color='#fff' component={Link} href="/consultations">Consultations</Typography>
           <Typography color='#fff'>Health Plans</Typography>
@@ -25,20 +25,22 @@ const FooterPage = () => {
           <Image src={LinkedInIcon} alt='facebook' width={30} height={30}></Image>
           <Image src={TwiterIcon} alt='facebook' width={30} height={30}></Image>
         </Stack>
-        <div className='border-b-[1px] border-dashed border-amber-50'></div>
-         <Stack direction="row" justifyContent="space-between" alignItems="center" gap={2} py={3}>
-            <Typography color='#fff' component='p'>
-                &copy; {date.getFullYear()} UK Healthcare. All rights reserved.
-            </Typography>
-            <Typography color='#fff' variant="h5" component={Link} href="/" fontWeight={600}>U<Box component="span" color="primary.main">K</Box> Health Care</Typography>
+        {/* <div className='border-b-[1px] border-dashed border-amber-50'></div>
+         */}
+        <Box sx={{ border: "1px dashed lightgray" }}></Box>
+        <Stack direction="row" justifyContent="space-between" alignItems="center" gap={2} py={3}>
+          <Typography color='#fff' component='p'>
+            &copy; {date.getFullYear()} UK Healthcare. All rights reserved.
+          </Typography>
+          <Typography color='#fff' variant="h5" component={Link} href="/" fontWeight={600}>U<Box component="span" color="primary.main">K</Box> Health Care</Typography>
 
-             <Typography color='#fff' component='p'>
-                Privacy Policy | Terms & Conditions
-            </Typography>
+          <Typography color='#fff' component='p'>
+            Privacy Policy | Terms & Conditions
+          </Typography>
 
         </Stack>
-    </Container>
-   </Box>
+      </Container>
+    </Box>
   )
 }
 
