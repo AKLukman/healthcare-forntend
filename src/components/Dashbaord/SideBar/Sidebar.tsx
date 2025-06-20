@@ -1,14 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, List, Stack, Typography } from '@mui/material';
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import logo from "../../../assets/svgs/logo.svg"
 import Link from 'next/link';
 import { drawerItems } from '@/utils/drawerItems';
 import { UserRole } from '@/types/common';
 import SidebarItem from './SidebarItem';
+import { getUserInfo } from '@/services/auth.services';
 
 const Sidebar = () => {
+    const [ userRole, setUserRole ] = useState( "" )
+    useEffect( () => {
+        const { role } = getUserInfo() as any;
+        setUserRole( role )
+    }, [] )
+
+
 
 
     return (
@@ -18,7 +27,7 @@ const Sidebar = () => {
                 <Typography variant='h6' component="h1">UK Health Care</Typography>
             </Stack>
             <List>
-                {drawerItems( "admin" as UserRole ).map( ( item, index ) => (
+                {drawerItems( userRole as UserRole ).map( ( item, index ) => (
                     <SidebarItem key={index} item={item} ></SidebarItem>
                 ) )}
             </List>

@@ -39,7 +39,7 @@ const LoginPage = () => {
       if ( res?.data?.accessToken ) {
         await storeUserInfo( { accessToken: res?.data?.accessToken } )
         toast.success( res.message )
-        router.push( "/" )
+        router.push( "/dashboard" )
       } else {
         setError( res.message )
         console.log( res.message )
